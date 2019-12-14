@@ -13,13 +13,12 @@ namespace DomänModellen
 
         public DbSet<Tävling> Tävling { get; set; }
 
-        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //setting up fluent mapping. Tells that Tävling hasmany deltagare
-            modelBuilder.Entity<Tävling>().HasMany(p => p.Alladeltagarna);
+            //setting up fluent mapping. Tells that Tävling has many deltagare
+            //modelBuilder.Entity<Tävling>().HasMany(p => p.Alladeltagarna);
 
-            //The ID in both Tävling and Deltagare will now be set as primary key. 
+            //The ID in both Tävling and Deltagare will now be set as primary key. //this is probebly not necessary since the migration already specifys this
            /* modelBuilder.Properties()
                         .Where(p => p.Name == "ID")
                         .Configure(p => p.IsKey());*/
