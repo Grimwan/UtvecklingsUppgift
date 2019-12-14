@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomänModellen", "DomänModellen\DomänModellen.csproj", "{83A8F681-6D7B-4C69-84F0-D11751F4139E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konsol-applikationen", "SystematiqProject\Konsol-applikationen.csproj", "{0E897075-CF6A-426A-A733-1A52273887DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHanteringsLager", "DataHanteringsLager\DataHanteringsLager.csproj", "{303F0079-83A1-4288-814C-A6D25423BD4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0E897075-CF6A-426A-A733-1A52273887DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E897075-CF6A-426A-A733-1A52273887DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E897075-CF6A-426A-A733-1A52273887DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303F0079-83A1-4288-814C-A6D25423BD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303F0079-83A1-4288-814C-A6D25423BD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303F0079-83A1-4288-814C-A6D25423BD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303F0079-83A1-4288-814C-A6D25423BD4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A8F681-6D7B-4C69-84F0-D11751F4139E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A8F681-6D7B-4C69-84F0-D11751F4139E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A8F681-6D7B-4C69-84F0-D11751F4139E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A8F681-6D7B-4C69-84F0-D11751F4139E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
