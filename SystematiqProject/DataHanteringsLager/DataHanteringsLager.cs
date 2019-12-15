@@ -13,15 +13,22 @@ namespace DataHanteringsLager
         public List<Tävling> GetAllTävlingar()
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
-            return context.Tävling.ToList<Tävling>();
+
+            var TävlingsList = context.Tävling.ToList<Tävling>();
+
+            foreach (var tävling in TävlingsList){
+                tävling.Alladeltagarna = context.Deltagare.Where(d => d.TävlingsId == tävling.ID).ToList<Deltagare>();
+            }
+            
+            return TävlingsList;
         }
         public Tävling GetTävling(int ID)
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
 
             var tävling = context.Tävling.Where(d => d.ID == ID).FirstOrDefault<Tävling>();
-
-            //tävling.Alladeltagarna = context.Deltagare.Where(d => d.Tävling == tävling).ToList<Deltagare>();
+            if(tävling != null)
+                tävling.Alladeltagarna = context.Deltagare.Where(d => d.TävlingsId == tävling.ID).ToList<Deltagare>();
 
             return tävling;
         }

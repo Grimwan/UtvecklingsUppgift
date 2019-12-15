@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTävlingAndDeltagare : DbMigration
+    public partial class updateDeltagareAndTävling : DbMigration
     {
         public override void Up()
         {
@@ -13,11 +13,11 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Namn = c.String(),
-                        Tävling_ID = c.Int(),
+                        TävlingsId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Tävling", t => t.Tävling_ID)
-                .Index(t => t.Tävling_ID);
+                .ForeignKey("dbo.Tävling", t => t.TävlingsId, cascadeDelete: true)
+                .Index(t => t.TävlingsId);
             
             CreateTable(
                 "dbo.Tävling",
@@ -32,8 +32,8 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Deltagares", "Tävling_ID", "dbo.Tävling");
-            DropIndex("dbo.Deltagares", new[] { "Tävling_ID" });
+            DropForeignKey("dbo.Deltagares", "TävlingsId", "dbo.Tävling");
+            DropIndex("dbo.Deltagares", new[] { "TävlingsId" });
             DropTable("dbo.Tävling");
             DropTable("dbo.Deltagares");
         }

@@ -13,33 +13,51 @@ namespace DataHanteringsLager
 
             DataHanteringsLager test = new DataHanteringsLager();
             var TestGetAll = test.GetAllTävlingar();
-            var TestGetOne = test.GetTävling(6);
-            Console.WriteLine("Hello World!");
+            var TestGetOne = test.GetTävling(4);
 
+
+            //BuildDeltagareAndTävlingDataBase();
+            Console.WriteLine("endofFile!");
         }
-        static void BuildDeltagareDataBase()
+
+        static void BuildDeltagareAndTävlingDataBase()
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
             DataHanteringsLager test = new DataHanteringsLager();
+            Tävling tävling1 = new Tävling()
+            {
+                Namn = "Skidåkning",
+            };
             Deltagare Deltagare1 = new Deltagare()
             {
                 Namn = "Jonas Filuren",
-                Tävling = test.GetTävling(1)
-        };
+                Tävling = tävling1
+            };
+
             Deltagare Deltagare2 = new Deltagare()
             {
                 Namn = "Gustav Johnsson",
-                Tävling = test.GetTävling(2)
+                Tävling = tävling1
+            };
+
+            Tävling tävling2 = new Tävling()
+            {
+                Namn = "Snowboarding",
             };
             Deltagare Deltagare3 = new Deltagare()
             {
                 Namn = "Amanda Sörenson",
-                Tävling = test.GetTävling(3)
+                Tävling = tävling2
+            };
+
+            Tävling tävling3 = new Tävling()
+            {
+                Namn = "Ishockey",
             };
             Deltagare Deltagare4 = new Deltagare()
             {
                 Namn = "Amanda Gustavsson",
-                Tävling = test.GetTävling(4)
+                Tävling = tävling3
             };
 
             context.Deltagare.Add(Deltagare1);
@@ -48,32 +66,7 @@ namespace DataHanteringsLager
             context.Deltagare.Add(Deltagare4);
             context.SaveChanges();
         }
-        static void BuildTävlingDataBase()
-        {
-            TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
 
-            Tävling tävling1 = new Tävling()
-            {
-                Namn = "skidåkning1",
-            };
-            Tävling tävling2 = new Tävling()
-            {
-                Namn = "skidåkning2",
-            };
-            Tävling tävling3 = new Tävling()
-            {
-                Namn = "skidåkning3",
-            };
-            Tävling tävling4 = new Tävling()
-            {
-                Namn = "skidåkning4",
-            };
-
-            context.Tävling.Add(tävling1);
-            context.Tävling.Add(tävling2);
-            context.Tävling.Add(tävling3);
-            context.Tävling.Add(tävling4);
-            context.SaveChanges();
-        }
+      
     }
 }

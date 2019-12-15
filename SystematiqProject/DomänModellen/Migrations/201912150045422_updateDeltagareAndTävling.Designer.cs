@@ -7,13 +7,13 @@ namespace DomänModellen.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class AddTävlingAndDeltagare : IMigrationMetadata
+    public sealed partial class updateDeltagareAndTävling : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTävlingAndDeltagare));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateDeltagareAndTävling));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912142102224_AddTävlingAndDeltagare"; }
+            get { return "201912150045422_updateDeltagareAndTävling"; }
         }
         
         string IMigrationMetadata.Source
