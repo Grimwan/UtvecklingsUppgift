@@ -11,15 +11,15 @@ namespace DataHanteringsLager
         static void Main(string[] args)
         {
 
-            DataHanteringsLager test = new DataHanteringsLager();
-            var TestGetAll = test.GetAllTävlingar();
-            var TestGetOne = test.GetTävling(4);
+            //DataHanteringsLager test = new DataHanteringsLager();
+            //var TestGetAll = test.GetAllTävlingar();
+            //var TestGetOne = test.GetTävling(4);
 
 
             //BuildDeltagareAndTävlingDataBase();
-            Console.WriteLine("endofFile!");
+            //Console.WriteLine("endofFile!");
         }
-
+        //This function will generate a database with Tävlingar and Deltagare.
         static void BuildDeltagareAndTävlingDataBase()
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataHanteringsLager;
 
 namespace SystematiqProject
 {
@@ -10,12 +11,22 @@ namespace SystematiqProject
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            DataHanteringsLager.DataHanteringsLager Data = new DataHanteringsLager.DataHanteringsLager();
+            var TävlingsList = Data.GetAllTävlingar();
+
+            foreach (var tävling in TävlingsList)
+            {
+                Console.WriteLine("Tävlings Namn: " + tävling.Namn);
+                Console.WriteLine("Deltagarna i tävlingen");
+
+                foreach(var deltagare in tävling.Alladeltagarna)
+                {
+                    Console.WriteLine(deltagare.Namn);
+                }
+                Console.WriteLine("_______________________________");
+            }
+            Console.ReadKey();
         }
     }
 }
