@@ -18,7 +18,12 @@ namespace DataHanteringsLager
         public Tävling GetTävling(int ID)
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
-            return context.Tävling.Where(d => d.ID == ID).First<Tävling>();
+
+            var tävling = context.Tävling.Where(d => d.ID == ID).FirstOrDefault<Tävling>();
+
+            //tävling.Alladeltagarna = context.Deltagare.Where(d => d.Tävling == tävling).ToList<Deltagare>();
+
+            return tävling;
         }
 
     }

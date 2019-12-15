@@ -60,10 +60,6 @@
     <Compile Include="Migrations\201912142102224_AddTävlingAndDeltagare.designer.cs">
       <DependentUpon>201912142102224_AddTävlingAndDeltagare.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912142220092_addUpdateTävling.cs" />
-    <Compile Include="Migrations\201912142220092_addUpdateTävling.designer.cs">
-      <DependentUpon>201912142220092_addUpdateTävling.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,9 +75,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912142102224_AddTävlingAndDeltagare.resx">
       <DependentUpon>201912142102224_AddTävlingAndDeltagare.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912142220092_addUpdateTävling.resx">
-      <DependentUpon>201912142220092_addUpdateTävling.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
