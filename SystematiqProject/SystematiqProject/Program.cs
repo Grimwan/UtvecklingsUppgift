@@ -13,7 +13,8 @@ namespace SystematiqProject
         {
            
             DataHanteringsLager.DataHanteringsLager data = new DataHanteringsLager.DataHanteringsLager();
-            data.BuildDeltagareAndTävlingDataBase();
+            //remove this commentary if you want to create a database and fill it with Tävlingar and Deltagare
+            //data.BuildDeltagareAndTävlingDataBase();
             var tävlingsList = data.GetAllTävlingar();
 
             foreach (var tävling in tävlingsList)
