@@ -12,16 +12,16 @@ namespace SystematiqProject
         static void Main(string[] args)
         {
            
-            DataHanteringsLager.DataHanteringsLager Data = new DataHanteringsLager.DataHanteringsLager();
-            //Data.BuildDeltagareAndTävlingDataBase();
-            var TävlingsList = Data.GetAllTävlingar();
+            DataHanteringsLager.DataHanteringsLager data = new DataHanteringsLager.DataHanteringsLager();
+            data.BuildDeltagareAndTävlingDataBase();
+            var tävlingsList = data.GetAllTävlingar();
 
-            foreach (var tävling in TävlingsList)
+            foreach (var tävling in tävlingsList)
             {
                 Console.WriteLine("Tävlings Namn: " + tävling.Namn);
                 Console.WriteLine("Deltagarna i tävlingen");
 
-                foreach(var deltagare in tävling.Alladeltagarna)
+                foreach(var deltagare in tävling.AllaDeltagarna)
                 {
                     Console.WriteLine(deltagare.Namn);
                 }

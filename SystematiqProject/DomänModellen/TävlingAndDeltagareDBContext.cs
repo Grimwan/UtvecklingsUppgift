@@ -15,8 +15,8 @@ namespace DomänModellen
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //fluent mapping sets up a foreignkey on tävlingsId.
-            modelBuilder.Entity<Deltagare>().HasRequired(c => c.Tävling).WithMany(d => d.Alladeltagarna).HasForeignKey(d => new { d.TävlingsId});
+            //fluent mapping sets up a foreignkey on tävlingsID.
+            modelBuilder.Entity<Deltagare>().HasRequired(c => c.Tävling).WithMany(d => d.AllaDeltagarna).HasForeignKey(d => new { d.TävlingsID});
 
            
 

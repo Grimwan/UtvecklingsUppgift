@@ -11,6 +11,6 @@ namespace DomänModellen
     {
         public int ID { get; set; }
         public string Namn { get; set; }
-        public virtual List<Deltagare> Alladeltagarna { get; set; }
+        public virtual List<Deltagare> AllaDeltagarna { get; set; }
     }
 }

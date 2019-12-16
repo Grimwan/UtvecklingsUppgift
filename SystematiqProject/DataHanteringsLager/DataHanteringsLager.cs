@@ -14,13 +14,13 @@ namespace DataHanteringsLager
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
 
-            var TävlingsList = context.Tävling.ToList<Tävling>();
+            var tävlingsList = context.Tävling.ToList<Tävling>();
 
-            foreach (var tävling in TävlingsList){
-                tävling.Alladeltagarna = context.Deltagare.Where(d => d.TävlingsId == tävling.ID).ToList<Deltagare>();
+            foreach (var tävling in tävlingsList){
+                tävling.AllaDeltagarna = context.Deltagare.Where(d => d.TävlingsID == tävling.ID).ToList<Deltagare>();
             }
             
-            return TävlingsList;
+            return tävlingsList;
         }
         public Tävling GetTävling(int ID)
         {
@@ -28,7 +28,7 @@ namespace DataHanteringsLager
 
             var tävling = context.Tävling.Where(d => d.ID == ID).FirstOrDefault<Tävling>();
             if(tävling != null)
-                tävling.Alladeltagarna = context.Deltagare.Where(d => d.TävlingsId == tävling.ID).ToList<Deltagare>();
+                tävling.AllaDeltagarna = context.Deltagare.Where(d => d.TävlingsID == tävling.ID).ToList<Deltagare>();
 
             return tävling;
         }
@@ -37,18 +37,17 @@ namespace DataHanteringsLager
         public void BuildDeltagareAndTävlingDataBase()
         {
             TävlingAndDeltagareDBContext context = new TävlingAndDeltagareDBContext();
-            DataHanteringsLager test = new DataHanteringsLager();
             Tävling tävling1 = new Tävling()
             {
                 Namn = "Skidåkning",
             };
-            Deltagare Deltagare1 = new Deltagare()
+            Deltagare deltagare1 = new Deltagare()
             {
                 Namn = "Jonas Filuren",
                 Tävling = tävling1
             };
 
-            Deltagare Deltagare2 = new Deltagare()
+            Deltagare deltagare2 = new Deltagare()
             {
                 Namn = "Gustav Johnsson",
                 Tävling = tävling1
@@ -58,7 +57,7 @@ namespace DataHanteringsLager
             {
                 Namn = "Snowboarding",
             };
-            Deltagare Deltagare3 = new Deltagare()
+            Deltagare deltagare3 = new Deltagare()
             {
                 Namn = "Amanda Sörenson",
                 Tävling = tävling2
@@ -68,16 +67,16 @@ namespace DataHanteringsLager
             {
                 Namn = "Ishockey",
             };
-            Deltagare Deltagare4 = new Deltagare()
+            Deltagare deltagare4 = new Deltagare()
             {
                 Namn = "Amanda Gustavsson",
                 Tävling = tävling3
             };
 
-            context.Deltagare.Add(Deltagare1);
-            context.Deltagare.Add(Deltagare2);
-            context.Deltagare.Add(Deltagare3);
-            context.Deltagare.Add(Deltagare4);
+            context.Deltagare.Add(deltagare1);
+            context.Deltagare.Add(deltagare2);
+            context.Deltagare.Add(deltagare3);
+            context.Deltagare.Add(deltagare4);
             context.SaveChanges();
         }
     }

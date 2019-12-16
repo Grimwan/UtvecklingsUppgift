@@ -10,7 +10,7 @@ namespace DomänModellen
     {
         public int ID { get; set; }
         public string Namn { get; set; }
-        public int TävlingsId { get; set; }
+        public int TävlingsID { get; set; }
         public virtual Tävling Tävling { get; set; }
     }
 }
