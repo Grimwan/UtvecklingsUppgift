@@ -8,7 +8,7 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.Deltagares",
+                "dbo.Deltagare",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -32,10 +32,10 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Deltagares", "TävlingsID", "dbo.Tävling");
-            DropIndex("dbo.Deltagares", new[] { "TävlingsID" });
+            DropForeignKey("dbo.Deltagare", "TävlingsID", "dbo.Tävling");
+            DropIndex("dbo.Deltagare", new[] { "TävlingsID" });
             DropTable("dbo.Tävling");
-            DropTable("dbo.Deltagares");
+            DropTable("dbo.Deltagare");
         }
     }
 }

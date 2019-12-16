@@ -13,7 +13,7 @@ namespace DomänModellen.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201912162132163_CreatedDeltagareAndTävling"; }
+            get { return "201912162347262_CreatedDeltagareAndTävling"; }
         }
         
         string IMigrationMetadata.Source

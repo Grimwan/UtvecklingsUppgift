@@ -18,12 +18,12 @@ namespace DomänModellen
             //fluent mapping sets up a foreignkey on tävlingsID.
             modelBuilder.Entity<Deltagare>().HasRequired(c => c.Tävling).WithMany(d => d.AllaDeltagarna).HasForeignKey(d => new { d.TävlingsID});
 
-           
+            modelBuilder.Entity<Deltagare>().ToTable("Deltagare");
 
             //The ID in both Tävling and Deltagare will now be set as primary key. //this is probebly not necessary since the migration already specifys this
-           /* modelBuilder.Properties()
-                        .Where(p => p.Name == "ID")
-                        .Configure(p => p.IsKey());*/
+            /* modelBuilder.Properties()
+                         .Where(p => p.Name == "ID")
+                         .Configure(p => p.IsKey());*/
         }
 
     }
