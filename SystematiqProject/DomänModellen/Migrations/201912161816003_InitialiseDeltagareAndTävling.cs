@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class updateDeltagareAndTävling : DbMigration
+    public partial class InitialiseDeltagareAndTävling : DbMigration
     {
         public override void Up()
         {

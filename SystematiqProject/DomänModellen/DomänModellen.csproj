@@ -56,9 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Deltagare.cs" />
-    <Compile Include="Migrations\201912150045422_updateDeltagareAndTävling.cs" />
-    <Compile Include="Migrations\201912150045422_updateDeltagareAndTävling.designer.cs">
-      <DependentUpon>201912150045422_updateDeltagareAndTävling.cs</DependentUpon>
+    <Compile Include="Migrations\201912161816003_InitialiseDeltagareAndTävling.cs" />
+    <Compile Include="Migrations\201912161816003_InitialiseDeltagareAndTävling.designer.cs">
+      <DependentUpon>201912161816003_InitialiseDeltagareAndTävling.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -73,8 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912150045422_updateDeltagareAndTävling.resx">
-      <DependentUpon>201912150045422_updateDeltagareAndTävling.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912161816003_InitialiseDeltagareAndTävling.resx">
+      <DependentUpon>201912161816003_InitialiseDeltagareAndTävling.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

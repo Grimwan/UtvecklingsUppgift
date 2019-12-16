@@ -11,8 +11,9 @@ namespace SystematiqProject
     {
         static void Main(string[] args)
         {
-
+           
             DataHanteringsLager.DataHanteringsLager Data = new DataHanteringsLager.DataHanteringsLager();
+            //Data.BuildDeltagareAndTävlingDataBase();
             var TävlingsList = Data.GetAllTävlingar();
 
             foreach (var tävling in TävlingsList)

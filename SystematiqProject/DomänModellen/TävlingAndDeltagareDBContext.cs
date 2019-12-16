@@ -15,8 +15,10 @@ namespace DomänModellen
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //setting up fluent mapping. Tells that Tävling has many deltagare
-            //modelBuilder.Entity<Tävling>().HasMany(p => p.Alladeltagarna);
+            //fluent mapping sets up a foreignkey on tävlingsId.
+            modelBuilder.Entity<Deltagare>().HasRequired(c => c.Tävling).WithMany(d => d.Alladeltagarna).HasForeignKey(d => new { d.TävlingsId});
+
+           
 
             //The ID in both Tävling and Deltagare will now be set as primary key. //this is probebly not necessary since the migration already specifys this
            /* modelBuilder.Properties()
